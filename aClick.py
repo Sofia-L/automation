@@ -1,5 +1,5 @@
 ''' Author: Luong Huyen Thuong
-	Date: 24-06-2024
+	Date: 14-08-2024
 	Version: 1.3
 	Usage: Users can give value to parameter like time between sleep in minute or changing tabs in second, path to sound file and positions of mouse (CLI). 9 Tabs on left handside, 14 Tabs on right handside. 
 '''
@@ -42,8 +42,15 @@ from pynput import keyboard
 @click.version_option(version='1.3')
 def autorun(monitorl1,monitorl2,monitorl3,monitorl4,monitorl5,monitorl6,monitorl7,monitorl8,monitorl9, monitorr1,monitorr2,monitorr3,monitorr4,monitorr5,monitorr6,monitorr7,monitorr8,monitorr9,monitorr10,monitorr11,monitorr12,monitorr13,monitorr14, minutes, tab, file):
     """
-    
-    z.B. python aClick.py --monitorL1 100 20 3 --minutes=11 --file=warning.mp3 --tab=5
+    Sau khi cai python 3.12 can cai them 1 so module ghi o phan import phia tren
+    de them/bot tab chi can them/bot may dong @click.option("--monitor... o tren cho phu hop, sau do kich hoat moi truong (trong windows tai thu muc chua file aClick.py chay lenh Scrips/activate
+    roi go vd: python aClick.py --monitorL1 100 20 3 --minutes=11 --file=warning.mp3 --tab=5
+    voi --monitor (man hinh) L (trai) hoac R (phai) STT tab toa_do_x toa_do_y so_lan_an_pageDOWN/UP
+    --file duong_dan_tuong_doi_den_file_nhac_chuong
+    --minutes thoi_gian_nghi_giua_nhung_lan_xem_tab
+    --tab so_giay_cho_giua_2_tab
+    chay ok co the xuat ra file .exe de chay tren cac may khong co cai python
+    Can cai module PyInstaller sau do xuat ra file exe voi lenh python -m PyInstaller -F aClick.py
     """
     monitorL = [monitorl1,monitorl2,monitorl3,monitorl4,monitorl5,monitorl6,monitorl7,monitorl8,monitorl9] #[(270,20,3),(430,20,0),(610,20,0),(780,20,2),(1030,20,2),(1230,20,0),(1420,20,0)]
     monitorR = [monitorr1,monitorr2,monitorr3,monitorr4,monitorr5,monitorr6,monitorr7,monitorr8,monitorr9,monitorr10,monitorr11,monitorr12,monitorr13,monitorr14] #[(2230,20,0),(2410,20,0),(2610,20,0),(2780,20,3),(2960,20,0),(3140,20,2),(3320,20,0)]
